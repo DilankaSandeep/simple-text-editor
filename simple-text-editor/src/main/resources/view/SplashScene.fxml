@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.SplashSceneController">
+   <children>
+      <ImageView fitHeight="374.0" fitWidth="585.0" layoutX="-2.0" layoutY="12.0">
+         <image>
+            <Image url="@../asset.img/b0090d60fe925d103368baf523478ff4.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="146.0" layoutY="172.0" prefHeight="27.0" prefWidth="290.0" text="Simple Text Editor">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+         <textFill>
+            <RadialGradient centerX="0.36111111111111116" centerY="0.4142857142857143" cycleMethod="REFLECT" focusDistance="0.11627906976744184" radius="0.011627906976744186">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="0.9689815044403076" blue="0.0694444477558136" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>
