@@ -25,7 +25,10 @@ public class AppInitializer extends Application {
         splashScene.setFill(Color.TRANSPARENT);
         primaryStage.centerOnScreen();
         primaryStage.show();
-        Thread.sleep(3000);
+
+
+
+
 
 
     }
