@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -32,8 +33,8 @@ public class SplashSceneController  {
                             Scene textEditorMainScene = new Scene(root);
                             Stage newStage = new Stage();
                             newStage.setScene(textEditorMainScene);
+                            newStage.initStyle(StageStyle.TRANSPARENT);
                             newStage.centerOnScreen();
-                            newStage.setTitle("Simple Text Editor");
                             newStage.show();
                             rootPane.getScene().getWindow().hide();
                         } catch (IOException e) {
