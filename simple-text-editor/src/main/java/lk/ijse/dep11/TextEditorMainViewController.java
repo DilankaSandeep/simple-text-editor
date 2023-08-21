@@ -7,10 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class TextEditorMainViewController {
     public AnchorPane root;
@@ -59,6 +63,18 @@ public class TextEditorMainViewController {
         userGuideStage.show();
     }
 
-    public void menuItemAboutUsOnAction(ActionEvent actionEvent) {
+    public void menuItemAboutUsOnAction(ActionEvent actionEvent) throws  Exception {
+        AnchorPane aboutUsroot = FXMLLoader.load(getClass().getResource("/view/AboutUsView.fxml"));
+        Scene aboutUsScene = new Scene(aboutUsroot);
+        Stage aboutUsStage = new Stage();
+        aboutUsStage.initStyle(StageStyle.TRANSPARENT);
+        aboutUsroot.setBackground(Background.fill(Color.TRANSPARENT));
+        aboutUsScene.setFill(Color.TRANSPARENT);
+        aboutUsStage.initModality(Modality.WINDOW_MODAL);
+        aboutUsStage.initOwner(root.getScene().getWindow());
+        aboutUsStage.setScene(aboutUsScene);
+        aboutUsStage.centerOnScreen();
+        aboutUsStage.show();
+
     }
 }
