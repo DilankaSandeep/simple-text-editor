@@ -6,11 +6,10 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.HTMLEditor?>
 
-<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.TextEditorMainViewController">
+<AnchorPane fx:id="root" onMouseDragged="#dragBarOnDragged" onMousePressed="#dragBarOnPressed" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep11.TextEditorMainViewController">
    <children>
       <MenuBar layoutY="27.0" prefHeight="37.0" prefWidth="586.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="27.0">
         <menus>
@@ -41,27 +40,25 @@
         </menus>
       </MenuBar>
       <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="10.0" layoutY="80.0" prefHeight="348.0" prefWidth="591.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
-      <Rectangle fx:id="dragBar" arcHeight="5.0" arcWidth="5.0" fill="#b7d3eb73" height="27.0" layoutX="10.0" layoutY="7.0" onMouseDragged="#dragBarOnDragged" onMousePressed="#dragBarOnPressed" stroke="TRANSPARENT" strokeMiterLimit="0.0" strokeType="INSIDE" width="580.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
-      <Label layoutX="14.0" layoutY="6.0" text="Simple Text Editor">
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="24.0" prefWidth="580.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Simple Text Editor" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btnExit" layoutX="561.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="6.0" prefWidth="19.0" text="X">
+      <Button fx:id="btnExit" layoutX="561.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnExitOnAction" prefHeight="6.0" prefWidth="24.0" text="❌" AnchorPane.rightAnchor="10.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="537.0" layoutY="2.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0">
+      <Button fx:id="btnmaximise" layoutX="537.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnmaximiseOnAction" prefHeight="24.0" prefWidth="24.0" text="◻" AnchorPane.rightAnchor="38.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Button layoutX="513.0" layoutY="2.0" mnemonicParsing="false" prefHeight="6.0" prefWidth="19.0" text="-">
+      <Button fx:id="btnMinimize" layoutX="513.0" layoutY="2.0" mnemonicParsing="false" onAction="#btnMinimizeOnAction" prefHeight="6.0" prefWidth="24.0" text="➖" AnchorPane.rightAnchor="66.0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" layoutX="544.0" layoutY="9.0" stroke="BLACK" strokeType="INSIDE" width="10.0" />
    </children>
 </AnchorPane>

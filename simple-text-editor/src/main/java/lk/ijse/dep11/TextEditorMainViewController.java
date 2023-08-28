@@ -12,9 +12,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.web.HTMLEditor;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.stage.*;
 
 public class TextEditorMainViewController {
     public AnchorPane root;
@@ -27,6 +25,8 @@ public class TextEditorMainViewController {
     public Button btnExit;
     public MenuItem menuItemUserGuide;
     public MenuItem menuitemAboutUs;
+    public Button btnmaximise;
+    public Button btnMinimize;
 
     public void menuItemNewOnAction(ActionEvent actionEvent) {
         htmlEditor.setHtmlText("");
@@ -76,5 +76,20 @@ public class TextEditorMainViewController {
         aboutUsStage.centerOnScreen();
         aboutUsStage.show();
 
+    }
+
+    public void btnmaximiseOnAction(ActionEvent actionEvent) {
+        Stage stage = (Stage)root.getScene().getWindow();
+        if(stage.isMaximized()){
+            stage.setMaximized(false);
+        }else {
+            stage.setMaximized(true);
+        }
+
+    }
+
+    public void btnMinimizeOnAction(ActionEvent actionEvent) {
+        Stage stage =(Stage) root.getScene().getWindow();
+        stage.setIconified(true);
     }
 }
