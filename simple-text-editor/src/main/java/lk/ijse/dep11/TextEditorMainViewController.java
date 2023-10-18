@@ -14,6 +14,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.web.HTMLEditor;
 import javafx.stage.*;
 
+import java.io.*;
+
 public class TextEditorMainViewController {
     public AnchorPane root;
     public MenuItem menuItemNew;
@@ -27,6 +29,7 @@ public class TextEditorMainViewController {
     public MenuItem menuitemAboutUs;
     public Button btnmaximise;
     public Button btnMinimize;
+    public MenuItem menuItemSave;
 
     public void menuItemNewOnAction(ActionEvent actionEvent) {
         htmlEditor.setHtmlText("");
@@ -91,5 +94,34 @@ public class TextEditorMainViewController {
     public void btnMinimizeOnAction(ActionEvent actionEvent) {
         Stage stage =(Stage) root.getScene().getWindow();
         stage.setIconified(true);
+    }
+
+    public void menuItemSaveOnAction(ActionEvent actionEvent) {
+        DirectoryChooser targetDirectory = new DirectoryChooser();
+        targetDirectory.setTitle("Save to");
+        try {
+            File file = targetDirectory.showDialog(root.getScene().getWindow());
+
+            File targetFile = new File(file.getAbsolutePath() + "/" +htmlEditor.getHtmlText().substring(102,106)+".txt");
+            boolean newFile = targetFile.createNewFile();
+            if(targetFile!=null){
+                FileOutputStream fos = new FileOutputStream(targetFile);
+                BufferedOutputStream bos = new BufferedOutputStream(fos);
+                byte[] bytes = htmlEditor.getHtmlText().substring(102,htmlEditor.getHtmlText().length()-25).getBytes();
+                bos.write(bytes);
+                System.out.println(new String(bytes));
+                bos.close();
+            }
+
+
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }finally {
+
+        }
+
+
     }
 }

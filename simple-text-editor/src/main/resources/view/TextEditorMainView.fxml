@@ -17,7 +17,7 @@
             <items>
                   <MenuItem fx:id="menuItemNew" mnemonicParsing="false" onAction="#menuItemNewOnAction" text="New" />
                   <MenuItem mnemonicParsing="false" text="Open" />
-              <MenuItem mnemonicParsing="false" text="Save" />
+              <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#menuItemSaveOnAction" text="Save" />
                   <MenuItem mnemonicParsing="false" text="Save As" />
                   <MenuItem mnemonicParsing="false" text="Print" />
                   <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#menuItemExitOnAction" text="Exit" />
@@ -39,7 +39,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="10.0" layoutY="80.0" prefHeight="348.0" prefWidth="591.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
+      <HTMLEditor fx:id="htmlEditor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" layoutX="10.0" layoutY="80.0" prefHeight="348.0" prefWidth="591.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
       <Label layoutX="14.0" layoutY="6.0" prefHeight="24.0" prefWidth="580.0" style="-fx-background-color: lightblue; -fx-background-radius: 10px;" text="Simple Text Editor" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
